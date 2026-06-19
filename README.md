@@ -1,2 +1,2 @@
-# taunggyi_ditectory_backend
+# taunggyi_directory_backend
 Backend code for taunggyi_directory app
