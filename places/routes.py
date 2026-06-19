@@ -1,6 +1,7 @@
 import json
 import os
 import shutil
+import time
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy import func
 from sqlalchemy.orm import Session
@@ -36,6 +37,7 @@ def create_place(place: PlaceCreate, db: Session = Depends(get_db),
 def get_places(db: Session = Depends(get_db)):
     places= db.query(Place).filter(Place.status ==ApprovalStatus.APPROVED).all()
     # return places
+    #time.sleep(5)
     return [
         PlaceOut(
             **p.__dict__,
